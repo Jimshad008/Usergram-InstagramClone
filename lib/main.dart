@@ -1,20 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:task4/Cart.dart';
-import 'package:task4/Homepage.dart';
-import 'package:task4/auth/controller/auth_controller.dart';
-import 'package:task4/auth/screens/Register.dart';
-import 'package:task4/auth/screens/LoginList.dart';
-import 'package:task4/categoryItems.dart';
-import 'package:task4/Whitslist.dart';
-import 'package:task4/auth/screens/login.dart';
-import 'package:task4/page1.dart';
-import 'package:task4/productDetail.dart';
 import 'package:task4/root.dart';
 
 // firebaseConfig = {
@@ -32,7 +20,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     await Firebase.initializeApp(
-        options: FirebaseOptions(
+        options: const FirebaseOptions(
             apiKey: "AIzaSyB_sYddSiWToQwx_yF_BWuPnMk0NNPJxY4",
             appId: "1:48588202226:web:4b2d8b31e7f7e9ab53b06b",
             messagingSenderId: "48588202226",
@@ -57,7 +45,7 @@ class _TaskState extends State<Task> {
   Widget build(BuildContext context) {
     h = MediaQuery.sizeOf(context).height;
     w = MediaQuery.sizeOf(context).width;
-    return MaterialApp(debugShowCheckedModeBanner: false,
+    return const MaterialApp(debugShowCheckedModeBanner: false,
         home: Rootpage());
   }
 }

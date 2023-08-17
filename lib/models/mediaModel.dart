@@ -1,6 +1,5 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 MediaModel? mediaModel;
 
 class MediaModel {
@@ -9,7 +8,7 @@ class MediaModel {
   String description;
   List likes;
   String mid;
-  List comment;
+
   String uid;
   DocumentReference ?ref;
   MediaModel({
@@ -19,7 +18,7 @@ class MediaModel {
     required this.image,
 
     required this.description,
-    required this.comment,
+
     required this.uid,
     required this.likes,
     required this.mid,
@@ -33,7 +32,6 @@ class MediaModel {
     uid: json["uid"]??'',
     likes: json["likes"]??[],
     mid:json["mid"]??'',
-    comment: json["comment"]??[],
     ref: json["ref"]
   );
   Map<String, dynamic> toJson() => {
@@ -44,7 +42,6 @@ class MediaModel {
     "uid": uid,
     "likes":likes,
     "mid":mid,
-    "comment":comment,
     "ref":ref,
   };
 
@@ -67,7 +64,6 @@ MediaModel copyWith({
         uid: uid ?? this.uid,
         likes: likes??this.likes,
           mid: mid??this.mid,
-          comment: comment??this.comment,
           ref: ref??this.ref
       );
 
